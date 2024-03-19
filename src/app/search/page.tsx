@@ -71,17 +71,17 @@ const Page = async ({ searchParams }: PageProps) => {
       </div>
     )
   }
-  return <ul className="py-4 divide-y divide-zinc-200 bg-white shadow-md rounded-b-md">
+  return <ul className="py-4 divide-y divide-zinc-200 bg-white dark:bg-slate-800 dark:divide-slate-700 shadow-md rounded-b-md">
       {products.slice(0, 3).map((product) => (
         <Link key={product.id} href={`/products/${product.id}`}>
           <li className="mx-auto py-4 px-8 flex space-x-4">
-            <div className="relative flex items-center bg-zinc-100 rounded-lg h-40 w-40">
+            <div className="relative flex items-center bg-zinc-100 dark:bg-slate-700 rounded-lg h-40 w-40">
               <Image loading='eager' fill alt='product-image' src={`/${product.imageId}`} />
             </div>
             <div className="w-full flex-1 space-y-2 py-1">
-                <h1 className="text-ld font-medium text-gray-900">{product.name}</h1>
-                <p className="prose prose-sm text-gray-500 line-clamp-3">{product.description}</p>
-                <p className="text-base font-medium text-gray-900">${product.price.toFixed(2)}</p>
+                <h1 className="text-ld font-medium text-gray-900 dark:text-slate-100">{product.name}</h1>
+                <p className="prose prose-sm text-gray-500 dark:text-slate-300 line-clamp-3">{product.description}</p>
+                <p className="text-base font-medium text-gray-900 dark:text-slate-100">${product.price.toFixed(2)}</p>
             </div>
           </li>
         </Link>
