@@ -60,12 +60,12 @@ const Page = async ({ searchParams }: PageProps) => {
   }
   if (products.length === 0) {
     return (
-      <div className="text-center py-4 bg-white shadow-md rounded-b-md ">
+      <div className="text-center py-4 bg-white dark:bg-slate-800 shadow-md rounded-b-md ">
         <X className="mx-auto w-8 h-8 text-red-500"/>
-        <h3 className="mt-2 text-sm font-semibold text-gray-900">
+        <h3 className="mt-2 text-sm font-semibold text-gray-900 dark:text-slate-100">
           No Results
         </h3>
-        <p className="mt-1 text-sm mx-auto max-w-prose text-gray-500">
+        <p className="mt-1 text-sm mx-auto max-w-prose text-gray-500 dark:text-slate-300">
            Sorry Pal, we couldn't find any matches for {' '} <span className="text-red-500 font-medium">{query}</span>
         </p>
       </div>

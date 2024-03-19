@@ -20,7 +20,7 @@ const SearchBar = () => {
     }
 
     return (
-        <div className="relative w-full h-14 flex flex-col bg-white">
+        <div className="relative w-full h-14 flex flex-col bg-white dark:bg-slate-800">
             <div className="relative h-14 z-10 rounded-md">
                 <Input disabled={isSearching} value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => {
                     if(e.key === "Enter"){

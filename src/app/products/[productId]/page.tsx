@@ -25,16 +25,16 @@ const Page = async ({ params }: PageProps) => {
   if (!product) return notFound();
 
   return (
-    <div className="py-8 pb-8 px-12 divide-y divide-zinc-200 bg-white shadow-md rounded-b-md">
+    <div className="py-8 pb-8 px-12 divide-y divide-zinc-200 bg-white dark:bg-slate-800 shadow-md rounded-b-md">
       <div>
         <BackButton />
         <div className="mt-4">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-100 sm:text-4xl">
             {product.name}
           </h1>
         </div>
         <div className="aspect-square my-6 border-border w-52 h-52">
-          <div className="relative bg-zinc-100 w-full h-full overflow-hidden rounded-xl">
+          <div className="relative bg-zinc-100 dark:bg-slate-700 w-full h-full overflow-hidden rounded-xl">
             <Image
               className="h-full w-full object-cover object-center"
               src={`/${product.imageId}`}
@@ -46,7 +46,7 @@ const Page = async ({ params }: PageProps) => {
         </div>
         <div className="mt-4">
           <div className="flex items-center">
-            <p className="font-medium text-gray-900">
+            <p className="font-medium text-gray-900 dark:text-slate-100">
               {product.price.toFixed(2)}
             </p>
           </div>
@@ -62,8 +62,8 @@ const Page = async ({ params }: PageProps) => {
 
         <div className="mt-6 text-center">
             <div className="inline-flex text-sm text-medium">
-                <Shield className="w-5 h-5 mr-2 flex-shrink-0 text-gray-400" />
-                <span className="text-muted-foreground hover:text-gray-700">Free shipping</span>
+                <Shield className="w-5 h-5 mr-2 flex-shrink-0 text-gray-400 dark:text-gray-500" />
+                <span className="text-muted-foreground hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">Free shipping</span>
             </div>
         </div>
       </div>
