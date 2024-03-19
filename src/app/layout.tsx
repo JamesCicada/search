@@ -5,16 +5,17 @@ import { Icons } from "@/components/icons";
 import SearchBar from "@/components/search-bar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ui/theme-button";
-import { Button } from "@/components/ui/button";
-import { HomeIcon } from "lucide-react";
 import { HomeButton } from "@/components/ui/home-button";
+import { Suspense } from 'react'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "JCSearch",
   description: "Just Me Designing a Search Engine To Learn NextJS.",
 };
-
+function SearchBarFallback() {
+  return <>placeholder</>
+}
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,7 +68,9 @@ export default function RootLayout({
                   Just Me Designing a Search Engine To Learn NextJS
                 </p>
                 <div className="mx-auto mt-16 w-full max-w-2xl flex flex-col">
-                  <SearchBar />
+                  <Suspense fallback={<SearchBarFallback />}>
+                    <SearchBar />
+                  </Suspense>
                   {children}
                 </div>
               </div>
